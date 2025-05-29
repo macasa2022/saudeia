@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>SaúdeIA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 🧬 SaúdeIA – Sistema de Triagem Assistida por IA</h1>
+        <p>Informe seus sintomas abaixo para obter uma orientação inicial.</p>
+
+        <form method="post">
+            <textarea name="symptoms" placeholder="Ex: Tenho febre, tosse e perdi o paladar..." required>{{ user_input }}</textarea><br>
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if diagnosis %}
+            <div class="response">
+                {{ diagnosis|safe }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
