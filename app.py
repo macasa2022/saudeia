@@ -48,4 +48,4 @@ def chat():
     return render_template("index.html", diagnosis=diagnosis, user_input=user_input)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
